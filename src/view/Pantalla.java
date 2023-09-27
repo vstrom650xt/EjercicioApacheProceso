@@ -25,7 +25,7 @@ public class Pantalla extends  JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
             //    Logica.executeProcess(apaOn,"service", "apache2", "start");
-                ApacheText.setText(String.valueOf(Logica.showOutPut( Logica.executeProcess(apaOn,"service", "mariadb", "start"))));
+                ApacheText.setText(String.valueOf(Logica.showOutPut( Logica.executeProcess(apaOn,"sudo","service", "mariadb", "start"))));
             }
         });
 
@@ -33,7 +33,7 @@ public class Pantalla extends  JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
         //        Logica.executeProcess(apaOff,"service", "apache2", "stop");
-                ApacheText.setText(String.valueOf(Logica.showOutPut( Logica.executeProcess(apaOff,"service", "mariadb", "stop"))));
+                ApacheText.setText(String.valueOf(Logica.showOutPut( Logica.executeProcess(apaOff,"sudo","service", "mariadb", "stop"))));
 
 
             }
@@ -42,7 +42,7 @@ public class Pantalla extends  JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
             //    Logica.executeProcess(onSql,"service", "mariadb", "start");
-                SQLtext.setText(String.valueOf(Logica.showOutPut( Logica.executeProcess(onSql,"service", "mariadb", "start"))));
+                SQLtext.setText(String.valueOf(Logica.showOutPut( Logica.executeProcess(onSql,"sudo","service", "mariadb", "start"))));
 
             }
         });
@@ -51,7 +51,7 @@ public class Pantalla extends  JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
           //      Logica.executeProcess(offSql,"service", "mariadb", "start");
-                SQLtext.setText(String.valueOf(Logica.showOutPut( Logica.executeProcess(offSql,"service", "mariadb", "stop"))));
+                SQLtext.setText(String.valueOf(Logica.showOutPut( Logica.executeProcess(offSql,"sudo","service", "mariadb", "stop"))));
 
             }
 

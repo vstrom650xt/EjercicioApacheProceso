@@ -19,9 +19,6 @@ public class Logica {
 
     }
     public static long showOutPut(Process process) {
-        if (process.pid()== 0)
-            return 0;
-
         return process.pid();
 
     }
