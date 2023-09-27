@@ -1,52 +1,34 @@
 package controller;
 
+import javax.swing.*;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Logica {
-
-
-    public static  void startApache(){
-        String []command = new String[]{"service", "apache2", "start"};
-        ProcessBuilder pb = new ProcessBuilder(command);
+    public static Process executeProcess(JButton btn, String... command) {
         try {
-            pb.start();
+            Process process = Runtime.getRuntime().exec(command);
+            System.out.println(process.pid());
+            return process;
+
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+        return null;
+
+    }
+    public static long showOutPut(Process process) {
+        if (process.pid()== 0)
+            return 0;
+
+        return process.pid();
 
     }
 
-    public static  void stopApache(){
-        String []command = new String[]{"service", "apache2", "start"};
-        ProcessBuilder pb = new ProcessBuilder(command);
-        try {
-            pb.start();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-    public static  void startSQL(){
-        String []command = new String[]{"service", "mariadb", "stop"};
-        ProcessBuilder pb = new ProcessBuilder(command);
-        try {
-            pb.start();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
 
 
-    }
-    public static  void stopSQL(){
-        String []command = new String[]{"service", "mariadb", "stop"};
-        ProcessBuilder pb = new ProcessBuilder(command);
-        try {
-            pb.start();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
 
-    }
 
 
 
